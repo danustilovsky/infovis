@@ -1,0 +1,74 @@
+* {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+html {
+  background-color: #47546c;
+}
+
+svg {
+  margin: 1%;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 4px;
+  color: #b0956a;
+}
+
+.sub-title {
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0;
+  color: #b0956a;
+}
+
+.sub-title > p {
+  margin-top: 0;
+}
+
+.text-italic {
+  font-style: italic;
+}
+.cardsContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+text {
+  font-size: 10px;
+  font-family: "sans-serif",
+}
+
+.playerRating {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.playerName {
+  font-size: 90%;
+  font-weight: bold;
+}
+
+.playerClub, .playerLeague {
+  font-size: 10px;
+}
+
+#sumary {
+  position: absolute;
+  top: 15%;
+  bottom: 0;
+  width: 25%;
+  color: #b0956a;
+}
+
+#vis {
+  height: 85%;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  bottom: 0;
+  width: 75%;
+  overflow-y: scroll;
+}

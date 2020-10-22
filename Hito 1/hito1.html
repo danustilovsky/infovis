@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="titles">
+        <h1>Hito 1 IIC2026</h1>
+        <h3>Dan Ustilovsky</h3>
+        <h3>11 de Septiembre 2020</h3>
+    </div>
+    <div class="p1_answer">
+        <h2>1. Abstracción de tareas</h2>
+        <div class="justification">
+            <h4>A. Contrarrestar distintos factores socio económicos, étnicos y criminales de los distintos condados con muertes.
+            </h4>
+            <p class="quote">“Ver si existe una relación geográfica y factores socio económicos”</p>
+            <p><span class="b_word">Tarea:</span> Descubrir tendencias entre los factores socio económicos y las zonas geográficas
+                donde fallecidos personas a
+                manos de la policía.</p>
+            <p>Dado que no hay conocimiento cierto sobre la posible relación entre los factores socioeconómicos y las zonas
+                geográficas, hace sentido que la acción correspondiente sea descubrir. Además, no podría ser comparar dado que solo
+                encontramos un único objetivo. Por otra parte, se opto por tendencias como objetivo, dado que no sirve analizar
+                simplemente si una zona geográfica presenta ciertos factores socio económicos, si no que para que un descubrimiento
+                sea
+                valido esta observación debe ser persistente en un numero suficiente de zonas geográficas y por ende se requiere una
+                tendencia.</p>
+            <p><span class="b_word">Datos</span>: City, State, county_fp, p_income, county_income, nat_bucket, pov, urate, college
+            </p>
+            <h5 class="asumption">*Se assume que podría desearse la información de los diferentes niveles de zonas geográficas.</h5>
+        </div>
+        <div>
+            <div class="justification">
+                <h4>B. Relación entre número de muertes de minorías raciales y personas blancas.</h4>
+                <p class="quote">“… le interesan las características de los difuntos: específicamente le interesa ver si el número de
+                    personas difuntas
+                    pertenecientes a alguna minoría racial (hispánica, negra o asiática) es significativamente mayor al de personas
+                    blancas”</p>
+                <p class="quote">“le gustaría saber si dentro de cada etnicidad, algún sexo biológico es particularmente afectado en el
+                    número de muertes
+                    por sobre otro.”</p>
+                <p><span class="b_word">Tarea:</span> Comparar el valor individual de la cantidad de difuntos pertenecientes a cada raza
+                    y la distribución del sexo biológico
+                    dentro de cada uno de estos valores.</p>
+                <p>Se selecciono la acción de comparar dado que hay mas de un objetivo. El primer objetivo corresponde a identificar si
+                    el
+                    numero de difuntos pertenecientes a alguna minoría racial es significativamente mayor que el numero de difuntos
+                    blancos.
+                    Es segundo lugar, se identifico el objetivo de poder identificar si la distribución de los sexos biológicos de los
+                    difuntos de las diferentes etnicidades no es similar. En conjunto con lo anterior se utilizo el objetivo el valor
+                    individual de los fallecimientos de personas de una sola etnia dado que solo interesa la cantidad por etnia y no su
+                    variación. Es el segundo objetivo se utilizo la distribución, dado que es interesante notar del total mencionado
+                    anteriormente como se distribuyen los sexos biológicos de los fallecidos.</p>
+                <p><span class="b_word">Datos</span>: raceethnicity, gender</p>
+            </div>
+        </div>
+        <div>
+            <div class="justification">
+                <h4>C. Relación Fechas y concentración de incidentes.</h4>
+                <p class="quote">“piensa que podría haber un patrón o concentración de incidentes en fechas claves, como efemérides del
+                    país u otras
+                    celebraciones específicas”</p>
+                <p><span class="b_word">Tarea:</span> Descubrir (valor individual de) cantidad de incidentes a lo largo del año.</p>
+                <p>Dado que tan solo se piensa y no hay un conocimiento claro respecto a esta creencia, la acción correspondiente debe
+                    ser
+                    descubrir. Por otra parte, dado que se agrupan la cantidad de incidentes por fecha, no se busca encontrar una
+                    tendencia
+                    en los datos si no que tan solo poder ver cuantos incidentes hubo por fecha (suma de incidentes por fecha) y con esa
+                    información notar si existe una mayor concentración en ciertas fechas específicas.</p>
+                <p><span class="b_word">Datos</span>: suma dates agrupadas por fecha</p>
+            </div>
+        </div>
+    </div>
+    <div class="p2_answer">
+        <h2>2. Abstracción de datos</h2>
+        <div class=col_just>
+            <h4 class="col_name">Name</h4>
+            <ul>
+                <li><span class="b_word">Categórico:</span> Los nombres no tienen un orden intrínseco y numérico.</li>
+                <li>El resto de las clasificaciones no aplica a este dato.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Age</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Al ser una secuencia de números, tiene un orden intrínseco y numérico.</li>
+                <li><span class="b_word">Cuantitativos:</span> Existe comparación aritmética exacta entre las edades.</li>
+                <li><span class="b_word">Secuencial:</span> Dado que tiene un mínimo y crece en una sola dirección.</li>
+                <li><span class="b_word">No cíclico:</span> Ya que teóricamente podría crecer indefinidamente y no se vuelve al origen.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Gender</h4>
+            <ul>
+                <li><span class="b_word">Categórico:</span> Los sexos biológicos no tienen un orden intrínseco ni matemático.</li>
+                <li>El resto de las clasificaciones no aplica a este dato.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Raceethnicity</h4>
+            <ul>
+                <li><span class="b_word">Categórico:</span> No presentan un orden intrínseco, dado que simplemente es una palabra.
+                </li>
+                <li>El resto de las clasificaciones no aplica a este dato.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Date</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Dado que las fechas (días y mes) tienen un orden intrínseco (desde el comienzo a final de año).
+                </li>
+                <li><span class="b_word">Cuantitativos:</span> No existe una comparación aritmética exacta entre las fechas.</li>
+                <li><span class="b_word">Secuencial:</span> No existe un cero que divida el conjunto de fechas, ni un crecimiento en ambas direcciones.</li>
+                <li><span class="b_word">Cíclico:</span> Al ser solo día y mes, al terminar un año se vuelve a comenzar desde la fecha mínima (01/01).</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">City</h4>
+            <ul>
+                <li><span class="b_word">Categórico:</span> La ciudad no cuenta con un orden intrínseco y numérico.
+                </li>
+                <li>El resto de las clasificaciones no aplica a este dato.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">State</h4>
+            <ul>
+                <li><span class="b_word">Categórico:</span> Los estados no cuenta con un orden intrínseco y numérico.
+                </li>
+                <li>El resto de las clasificaciones no aplica a este dato.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Latitude</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Dado que la latitud, rango de números reales, tienen un orden intrínseco y matemático.
+                </li>
+                <li><span class="b_word">Cuantitativos:</span> Al ser números, si existe una comparación aritmética exacta.</li>
+                <li><span class="b_word">Divergente:</span> Dado que están las latitudes positivas y las negativas, pero ambas comparten la línea del ecuador (latitud 0) como cero
+                en común.</li>
+                <li><span class="b_word">No cíclico:</span> Dado que no existe un lugar de inicio o valor de latitud inicial, se podría considerar un polo o el ecuador, pero de
+                todas formas pese a estar acotado no existe un ciclo.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Longitud</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Dado que la longitud, rango de números reales, tienen un orden intrínseco y matemático.
+                </li>
+                <li><span class="b_word">Cuantitativos:</span> Al ser números, si existe una comparación aritmética exacta.</li>
+                <li><span class="b_word">Divergente:</span> Dado que existen longitudes positivas y las negativas, pero ambas comparten el meridiano de Greenwich (longitud 0) como
+                cero en común.</li>
+                <li><span class="b_word">No cíclico:</span> Dado que no existe un lugar de inicio o valor de longitud inicial, se podría considerar el meridiano o cualquier otra
+                longitud, pero de todas formas pese a estar acotado no existe un ciclo.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">County_fp</h4>
+            <ul>
+                <li><span class="b_word">Categórico:</span> Al ser un código identificador, este no tiene un orden intrínseco.
+                </li>
+                <li>El resto de las clasificaciones no aplica a este dato.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Cause</h4>
+            <ul>
+                <li><span class="b_word">Categórico:</span> Una frase no tiene un orden intrínseco ni matemático.
+                </li>
+                <li>El resto de las clasificaciones no aplica a este dato.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Armed</h4>
+            <ul>
+                <li><span class="b_word">Categórico:</span> Un booleano o tipo de arma no tienen un orden intrínseco.
+                </li>
+                <li>El resto de las clasificaciones no aplica a este dato.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Share_white</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Los porcentajes al ser números tienen un orden intrínseco y matemático.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> Los porcentajes permiten comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> Los porcentajes van de 0 a 1 (o 0 a 100), pero no existen dos direcciones de crecimiento ni un cero que separe este
+                conjunto.</li>
+                <li><span class="b_word">No cíclico:</span> Ya que al alcanzar el 100%, simplemente no se puede continuar aumentando, pero no se vuelve al 0%.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Share_black</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Los porcentajes al ser números tienen un orden intrínseco y
+                    matemático.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> Los porcentajes permiten comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> Los porcentajes van de 0 a 1 (o 0 a 100), pero no existen dos
+                    direcciones de crecimiento ni un cero que separe este
+                    conjunto.</li>
+                <li><span class="b_word">No cíclico:</span> Ya que al alcanzar el 100%, simplemente no se puede continuar
+                    aumentando, pero no se vuelve al 0%.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Share_hispanic</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Los porcentajes al ser números tienen un orden intrínseco y
+                    matemático.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> Los porcentajes permiten comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> Los porcentajes van de 0 a 1 (o 0 a 100), pero no existen dos
+                    direcciones de crecimiento ni un cero que separe este
+                    conjunto.</li>
+                <li><span class="b_word">No cíclico:</span> Ya que al alcanzar el 100%, simplemente no se puede continuar
+                    aumentando, pero no se vuelve al 0%.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">P_income</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> El ingreso es un numero natural el cual tiene un orden intrínseco y matemático, por lo que la mediana de este también
+                tiene.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> El ingreso permite comparaciones aritméticas exactas, por lo que la mediana sigue siendo un ingreso y por ende también
+                permite comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> No existe un 0 que divida el conjunto en dos direcciones de crecimiento.</li>
+                <li><span class="b_word">No cíclico:</span> La cantidad del ingreso, y su mediana, puede crecer indefinidamente.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">County_income</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> El ingreso es un numero natural el cual tiene un orden intrínseco y
+                    matemático, por lo que la mediana de este también
+                    tiene.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> El ingreso permite comparaciones aritméticas exactas, por lo que
+                    la mediana sigue siendo un ingreso y por ende también
+                    permite comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> No existe un 0 que divida el conjunto en dos direcciones de crecimiento.
+                </li>
+                <li><span class="b_word">No cíclico:</span> La cantidad del ingreso, y su mediana, puede crecer indefinidamente.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Nat_bucket</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Los quintiles representan ciertos porcentajes, y por lo tanto tienen un orden intrínseco y matemático.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> Dado que el valor de este atributo es un numero representando el quintil a nivel país, los números utilizados en esta
+                representación permiten comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> No existe un cero que permite dividir los posibles quintiles.
+                </li>
+                <li><span class="b_word">No cíclico:</span> Los quintiles son un porcentaje, y al llegar al quinto quintil, simplemente no se puede continuar aumentando pero no se regresa
+                    a un valor inicial.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Pov</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Los porcentajes al ser números tienen un orden intrínseco y matemático.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> Los porcentajes permiten comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> Los porcentajes van de 0 a 1 (o 0 a 100), pero no existen dos direcciones de crecimiento ni un cero que separe este
+                conjunto.</li>
+                <li><span class="b_word">No cíclico:</span> Ya que al alcanzar el 100%, simplemente no se puede continuar aumentando, pero no se vuelve al 0%.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">Urate</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Las razones al ser números tienen un orden intrínseco y matemático.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> Las razones permiten comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> Las razones van de 0 a 1, pero no existen dos direcciones de crecimiento ni un cero que separe este conjunto.</li>
+                <li><span class="b_word">No cíclico:</span> No existe un valor que, al ser alcanzado, cause que se vuelva al valor mínimo o inicial.</li>
+            </ul>
+        </div>
+        <div class=col_just>
+            <h4 class="col_name">College</h4>
+            <ul>
+                <li><span class="b_word">Ordenado:</span> Las razones al ser números tienen un orden intrínseco y matemático.
+                </li>
+                <li><span class="b_word">Cuantitativo:</span> Las razones permiten comparaciones aritméticas exactas.</li>
+                <li><span class="b_word">Secuencial:</span> Las razones van de 0 a 1, pero no existen dos direcciones de
+                    crecimiento ni un cero que separe este conjunto.</li>
+                <li><span class="b_word">No cíclico:</span> No existe un valor que, al ser alcanzado, cause que se vuelva al
+                    valor mínimo o inicial.</li>
+            </ul>
+        </div>
+        <div class="d_just">
+            <h3>¿De qué tipo de dataset se trata pólice_killings.csv?</h3>
+            <p>El tipo de dataset corresponde a una <span class="b_word">tabla</span>, dado que como se puede notar esta en un archivo csv. Este se caracteriza por
+            almacenar información en forma de tablas mediante filas y columnas.</p>
+            <h3>¿Es un dataset estático o dinámico?</h3>
+            <p>El dataset es <span class="b_word">estático</span> dado que contamos con los datos antes de comenzar a trabajar, y no tenemos información de que
+            estos se vayan a actualizar en el futuro.</p>
+            <h3>¿Qué tipos de datos singulares hay presentes en el dataset?</h3>
+            <p>En el dataset encontramos datos del tipo <span class="b_word">item</span>, correspondiente a cada una de las filas en su totalidad dado que cada
+            caso es una entidad compleja que esta compuesta de múltiples valores. También podemos encontrar <span class="b_word">atributos</span>,
+            correspondientes a las celdas en la tabla, dado que cada una es una medición o valor en específico. También se cuenta
+            con datos del tipo <span class="b_word">posición</span>, dado que contamos con latitud y longitud, ambos definen una posición en una dimensión del
+            espacio y uniendo ambas, se obtiene una posición en especifico dentro de los estados unidos.</p>
+        </div>
+    </div>
+</body>

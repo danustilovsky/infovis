@@ -1,0 +1,47 @@
+* {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+html {
+  background-color: snow;
+}
+
+svg {
+  border: 2px solid #69359c;
+  background-color: white;
+}
+
+h1 {
+  margin-bottom: 4px;
+}
+
+.sub-title {
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0;
+}
+
+.sub-title > p {
+  margin-top: 0;
+}
+
+.species {
+  margin-bottom: 15px;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#petal .dot{
+  background-color: purple;
+}
+
+#sepal .dot{
+  background-color: blue;
+}
