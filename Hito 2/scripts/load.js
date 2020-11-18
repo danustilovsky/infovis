@@ -25,6 +25,7 @@ const dataset = d3.csv(
   }
 )
   .then(data => {
+    var allData = data
     svg
       .selectAll("svg")
       .data(data)
@@ -55,6 +56,9 @@ const dataset = d3.csv(
 
     cardsNum.textContent = data.length;
 
+    var teams = ["all"];
+    var leagues = ["all"];
+
     let avgValues = {
       dribbling: 0,
       defending: 0,
@@ -70,6 +74,11 @@ const dataset = d3.csv(
       avgValues.pace += element.pace;
       avgValues.shooting += element.shooting;
       avgValues.passing += element.passing;
+
+      teams.push(element.CLUB)
+      leagues.push(element.LEAGUE)
+
+    
     });
 
     avgValues.dribbling = avgValues.dribbling / data.length;
@@ -82,8 +91,45 @@ const dataset = d3.csv(
       .selectAll("svg")
       .data([avgValues])
       .join(enterSumary);
+
+    var uniqueTeams = [... new Set(teams)]
     
-    
+    var teamsSelect = document.getElementById("teamsSelect");
+
+
+    uniqueTeams.forEach((d)=>{
+      let option = document.createElement("option");
+      option.text = d
+      option.value = d
+
+      teamsSelect.options.add(option)
+    })
+
+    teamsSelect.onchange = function () {
+      svg.selectAll("svg").remove()
+      if (teamsSelect.value == "all") {
+        svg.selectAll("svg").data(allData).join(enter, enter, exit);
+      } else {
+        let filteredData = allData.filter((d) => {
+          return d.CLUB == teamsSelect.value;
+        });
+        svg.selectAll("svg").data(filteredData).join(enter, enter, exit);
+      }
+    }
+
+    var uniqueLeagues = [...new Set(leagues)];
+
+    var leagueSelect = document.getElementById("leagueSelect");
+
+    uniqueLeagues.forEach((d) => {
+      let option = document.createElement("option");
+      option.text = d;
+      option.value = d;
+
+      leagueSelect.options.add(option);
+    });
+
+
   })
 
 const sizeScale = d3.scaleLinear().domain([0, 100]).range([0, 100]);
@@ -345,7 +391,7 @@ const enterSumary = (enter) =>
 
       d3.select(this)
         .append("g")
-        .attr("transform", "translate(150, 200)")
+        .attr("transform", "translate(150, 150)")
         .each(function (d) {
           d3.select(this)
             .append("circle")
@@ -381,7 +427,7 @@ const enterSumary = (enter) =>
                 .attr("text-anchor", "middle")
                 .text((d) => d.text)
             );
-          console.log(playerStats(d))
+
           d3.select(this)
             .append("path")
             .attr("d", drawLines(playerStatsResumen(d)))
@@ -390,3 +436,5 @@ const enterSumary = (enter) =>
         });
     });
 
+const exit = (exit) =>
+  exit.remove();

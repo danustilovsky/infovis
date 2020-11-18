@@ -10,7 +10,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/underscore@1.11.0/underscore-min.js"></script>
   <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="https://cdnjs.com/libraries/d3-legend"></script>
+
 </head>
 <body>
   <h1>Hito 2</h1>
@@ -20,6 +20,12 @@
   <div id="sumary">
     <h1>Resumen</h1>
     <h3>Numero de tarjetas: <span id="cardsNum">0</span></h3>
+    <div id="filter">
+      <select name="teamsSelect" id="teamsSelect">
+      </select>
+      <select name="leagueSelect" id="leagueSelect">
+      </select>
+    </div>
   </div>
   <div id="vis"></div>
   <script src="scripts/load.js"></script>
