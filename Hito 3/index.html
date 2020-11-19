@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>H3 IIC2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Hito 3</h1>
+    <div class="sub-title">
+      <p>Dan Ustilovsky</p>
+    </div>
+    <div id="graph"></div>
+    <div id="informe">
+      <h2>Informe</h2>
+      <div>
+        <p>
+          Para el mapa coroplético se decidio utilizar un colormap para
+          codificar Indice de dependencia total, en primer lugar dado que este
+          permitia apreciar las distintas tonalidades al visualizar el mapa ya
+          que con otros atributos las diferencias de valores era tan grande que
+          solo alguos se pintaban y el resto permanecian sin color. Ademas, este
+          atributo permitia analizar a lo largo de las diferentes columnas la
+          cantidad de poblacion con menos de 15 años y mas de 65 años en
+          comparacion con la cantidad de personas con entre 15 y 64 años. Esto
+          es sumamente interesante dado que al utilizar un colormap esto nos
+          permite tener una comparacion sumamente clara de como es la
+          distribucion etaria en las distintas comunas.
+        </p>
+        <p>
+          En cuanto a la eleccion del colormap, decidi utilizar distintos tonos
+          de verde dado que estamos representando personas, y mas alla de eso
+          estamos representando las edades de personas. En otras palabras
+          estamos representando vida, y como se distribuye la vida en las
+          comunas. Por lo mismo, me parecio que el verde era un color apropiado
+          para esto, debido a que sin arboles o la naturaleza no puede haber
+          vida en el planeta. Y por lo mismo aquellas regiones con mayor valor
+          el indice representado significa que hay mas personas que han vivido
+          gran parte de su vida y al mismo tiempo que hay una gran cantidad
+          relativa de personas que les quedan muchos años por vivir.
+        </p>
+        <p>
+          En segundo lugar se decidio utilizar una proyeccion cartografica
+          Mercator dado que solo estabamos interesados en poder identificar las
+          comunas y representar informacion segun el color del area de cada una
+          de ellas, por lo que si las dimensiones de las comunas se veian
+          alteradas no era realmente importante. Lo que era relevante era que
+          una persona al utilizar la visualizacion lograra encontrar las comunas
+          segun su posicion relativa y forma, lo cual se logra con la proyeccion
+          utilizada ya que distorciona mas las dimensiones pero menos las
+          formas.
+        </p>
+        <p>
+          Para el zoom se decidio utilizar el scroll del mouse dado que me
+          parecio la forma mas intuitiva de poder controlar hacia que parte del
+          mapa se hacia zoom y al mismo tiempo se decidio dejar un nivel de zoom
+          maximo que permita distinguir entre las comunas en la region
+          metropolitana, dado que estas eran las mas pequeñas y sin un nivel
+          alto de zoom era imposible distinguir entre las diferentes comunas
+          para seleccionarlas para la segunda visualizacion. De misma formas se
+          decidio implementar el panning utilizando el drag del mouse (click y
+          arrastras) ya que nuevamente permitia de forma simple e intuitiva el
+          desplazamiento a lo largo del mapa, permitiendo alcanzar las comunas
+          deseadas y luego seleccionarlas.
+        </p>
+        <p>
+          En cuanto al idiom seleccionado se decidio utilizar un grafico de
+          barras apiladas dado que la suma de los dos valores representados en
+          este idiom corresponden al valor codificado mediante el colormap, por
+          lo tanto permite al seleccionar una comuna que se pueda adentrar en el
+          detalle de la composicion de la distribucion etaria, dado que permite
+          analizar cual es la composicion en detalle de dicha comuna,
+          permitiendo desglozar el valor del colormap en sus componentes. Esto
+          al mismo tiempo permite encontrar tendencias o relaciones entre
+          diferentes comunas, permitiendo la comparacion de distintas comunas
+          para si existe una tendencia entre los valores del indice del mapa
+          coropletico y los indices juveniles y adultos.
+        </p>
+        <p>
+          Con respecto a lo anterior, se utilizo el largo (alto) del rectangulo
+          para codificar el valor del indice a traves del largo de la lineas de
+          este, dado que esta es una forma clara que permite comparar a grandes
+          rasgos los valores de cada uno de los indices y la suma de los valores
+          de estos, al tomar el largo conjunto de ambos rectangulos. En caso de
+          desear poder entrar en mas detalle, al hacer hover uno de los
+          rectangulos, se muestra el nombre de la comuna y el valor representado
+          por dicho rectangulo.
+        </p>
+        <p>
+          Para la seleccion de las comunas se utilizo el click sobre el area de
+          la comuna a seleccionar, y el click sobre una seleccionada para
+          sacarla de la seleccion, en conjunto con lo anterior al seleccionar
+          una comuna esta cambia de color para lograr que sea mas facil
+          identificar las comunas seleccionadas. Se decidio utilizar el click
+          dado que permite recorrer de forma independiente las diferentes
+          regiones del mapa y seleccionar una a una las comunas sin la necesidad
+          de hacerlo entre areas contiguas como seria si se usara un brush.
+        </p>
+        <p>
+          Finalmente, en cuanto a la distribucion espacial se decidio dejar todo
+          en una linea horizontal debido a que esto otorga suficiente espacio
+          para poder interactual con ambas visualizaciones y al mismo tiempo no
+          se hace necesario desplazarse por la pagina, de forma que evitamos
+          generar una molestia para el usuario. Al mismo tiempo, esto permite
+          que la interaccion sea mas fluida y apenas se realiza la seleccion o
+          deseleccion en el mapa se puede notar el cambio en las
+          visualizaciones.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script src="scripts/censo.js"></script>
+</html>
